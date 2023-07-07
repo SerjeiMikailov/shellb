@@ -1,6 +1,6 @@
 <h1>ShellB - "A better Shell than Shell"</h1>
 
-<p>How does it works? So simple, it's just a Shell with some "new features</p>
+<p>How does it works? So simple, it's just a Shell with some "new features"</p>
 <p>When I say "features," I'm referring to new commands and improvements to the existing ones</p>
 
 ---
