@@ -2,8 +2,8 @@
 
 void read_command(char *command)
 {
-    char* user = get_user();
-    char* folder = working_dir();
+    char *user = get_user();
+    char *folder = working_dir();
 
     printf("\033[1;32m%s\033[0m:", user);
     printf("\033[1;34m%s\033[0m -> ", folder);
@@ -38,7 +38,7 @@ void execute_command(char **args)
         }
     }
     else if (strcmp(args[0], "ls") == 0) // ls
-    {   
+    {
         DIR *dir;
         struct dirent *entry;
 
@@ -57,9 +57,27 @@ void execute_command(char **args)
             return;
         }
 
+        int max_name_length = 0;
         while ((entry = readdir(dir)) != NULL)
         {
-            printf("%s\n", entry->d_name);
+            if (strcmp(entry->d_name, ".") != 0 && strcmp(entry->d_name, "..") != 0)
+            {
+                int name_length = strlen(entry->d_name);
+                if (name_length > max_name_length)
+                {
+                    max_name_length = name_length;
+                }
+            }
+        }
+
+        rewinddir(dir);
+
+        while ((entry = readdir(dir)) != NULL)
+        {
+            if (strcmp(entry->d_name, ".") != 0 && strcmp(entry->d_name, "..") != 0)
+            {
+                printf("%-*s\n", max_name_length + 2, entry->d_name);
+            }
         }
 
         closedir(dir);
@@ -76,23 +94,29 @@ void execute_command(char **args)
             puts("Error to rename");
         }
     }
-    else if (strcmp(args[0], "rm") == 0) // remove 
+    else if (strcmp(args[0], "rm") == 0) // remove
     {
-        if (args[1] == NULL) {
+        if (args[1] == NULL)
+        {
             puts("Type the name of the file/directory to remove with 'rm'");
             return;
         }
 
         struct stat st;
-        if (lstat(args[1], &st) == -1) {
+        if (lstat(args[1], &st) == -1)
+        {
             puts("Error getting file/directory information");
             return;
         }
 
-        if (S_ISDIR(st.st_mode)) {
+        if (S_ISDIR(st.st_mode))
+        {
             remove_directory(args[1]);
-        } else {
-            if (remove(args[1]) != 0) {
+        }
+        else
+        {
+            if (remove(args[1]) != 0)
+            {
                 printf("Error removing file: %s", args[1]);
             }
         }
@@ -111,7 +135,7 @@ void execute_command(char **args)
     }
     else if (strcmp(args[0], "shellb") == 0) // shellb
     {
-       shellb();
+        shellb();
     }
     else if (strcmp(args[0], "loc") == 0) // location
     {
@@ -136,16 +160,16 @@ int main()
 {
     clear();
     shellb();
- 
+
     char command[MAX_COMMAND_LENGHT];
     char *args[MAX_ARGS];
 
     while (1)
     {
-            read_command(command);
-            parse_command(command, args);
-            execute_command(args);
+        read_command(command);
+        parse_command(command, args);
+        execute_command(args);
     }
 
-     return 0;
+    return 0;
 }
