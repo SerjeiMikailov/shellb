@@ -1,5 +1,5 @@
 #include "App.h"
-
+//
 void read_command(char *command)
 {
     char *user = get_user();
