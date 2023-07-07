@@ -1,2 +1,6 @@
 .vscode
 /build
+build/
+build/main
+build/main.o
+build/remove_dir.o
