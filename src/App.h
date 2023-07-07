@@ -15,5 +15,5 @@
 void remove_directory(const char *path);
 char* get_user();
 void clear();
-void working_dir();
+char* working_dir();
 void shellb();

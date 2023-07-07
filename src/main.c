@@ -3,7 +3,10 @@
 void read_command(char *command)
 {
     char* user = get_user();
-    printf("%s -> ", user);
+    char* folder = working_dir();
+
+    printf("\033[1;32m%s\033[0m:", user);
+    printf("\033[1;34m%s\033[0m -> ", folder);
     fgets(command, MAX_COMMAND_LENGHT, stdin);
     command[strcspn(command, "\n")] = '\0';
 }
@@ -36,8 +39,6 @@ void execute_command(char **args)
     }
     else if (strcmp(args[0], "ls") == 0) // ls
     {   
-        working_dir();
-
         DIR *dir;
         struct dirent *entry;
 
@@ -120,7 +121,6 @@ void execute_command(char **args)
     {
         clear();
         shellb();
-        working_dir();
     }
     else if (strcmp(args[0], "fc") == 0) // full clear
     {
@@ -136,7 +136,6 @@ int main()
 {
     clear();
     shellb();
-    working_dir();
  
     char command[MAX_COMMAND_LENGHT];
     char *args[MAX_ARGS];
