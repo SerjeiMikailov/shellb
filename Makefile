@@ -5,15 +5,15 @@ LDFLAGS =
 SRC_DIR = src
 OUTPUT_DIR = build
 
+SRCS = $(wildcard $(SRC_DIR)/*.c)
+OBJS = $(patsubst $(SRC_DIR)/%.c,$(OUTPUT_DIR)/%.o,$(SRCS))
+
 all: $(OUTPUT_DIR)/main
 
-$(OUTPUT_DIR)/main: $(OUTPUT_DIR)/main.o $(OUTPUT_DIR)/remove_dir.o
+$(OUTPUT_DIR)/main: $(OBJS)
 	$(CC) $(LDFLAGS) -o $@ $^
 
-$(OUTPUT_DIR)/main.o: $(SRC_DIR)/main.c $(SRC_DIR)/App.h
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OUTPUT_DIR)/remove_dir.o: $(SRC_DIR)/remove_dir.c $(SRC_DIR)/App.h
+$(OUTPUT_DIR)/%.o: $(SRC_DIR)/%.c $(SRC_DIR)/App.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

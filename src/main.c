@@ -2,7 +2,8 @@
 
 void read_command(char *command)
 {
-    printf("> ");
+    char* user = get_user();
+    printf("%s -> ", user);
     fgets(command, MAX_COMMAND_LENGHT, stdin);
     command[strcspn(command, "\n")] = '\0';
 }
@@ -21,7 +22,7 @@ void parse_command(char *command, char **args)
 
 void execute_command(char **args)
 {
-    if (strcmp(args[0], "cd") == 0)
+    if (strcmp(args[0], "cd") == 0) // cd
     {
         if (args[1] == NULL)
         {
@@ -33,8 +34,10 @@ void execute_command(char **args)
             puts("Error to access the directory");
         }
     }
-    else if (strcmp(args[0], "ls") == 0)
-    {
+    else if (strcmp(args[0], "ls") == 0) // ls
+    {   
+        working_dir();
+
         DIR *dir;
         struct dirent *entry;
 
@@ -60,7 +63,7 @@ void execute_command(char **args)
 
         closedir(dir);
     }
-    else if (strcmp(args[0], "re") == 0)
+    else if (strcmp(args[0], "re") == 0) // rename
     {
         if (args[1] == NULL || args[2] == NULL)
         {
@@ -72,7 +75,7 @@ void execute_command(char **args)
             puts("Error to rename");
         }
     }
-    else if (strcmp(args[0], "rm") == 0)
+    else if (strcmp(args[0], "rm") == 0) // remove 
     {
         if (args[1] == NULL) {
             puts("Type the name of the file/directory to remove with 'rm'");
@@ -93,7 +96,7 @@ void execute_command(char **args)
             }
         }
     }
-    else if (strcmp(args[0], "cf") == 0)
+    else if (strcmp(args[0], "cf") == 0) // create folder
     {
         if (args[1] == NULL)
         {
@@ -105,6 +108,24 @@ void execute_command(char **args)
             printf("Error to create the dir\n");
         }
     }
+    else if (strcmp(args[0], "shellb") == 0) // shellb
+    {
+       shellb();
+    }
+    else if (strcmp(args[0], "loc") == 0) // location
+    {
+        working_dir();
+    }
+    else if (strcmp(args[0], "clear") == 0) // clear
+    {
+        clear();
+        shellb();
+        working_dir();
+    }
+    else if (strcmp(args[0], "fc") == 0) // full clear
+    {
+        clear();
+    }
     else
     {
         printf("Unknow: %s\n", args[0]);
@@ -113,6 +134,10 @@ void execute_command(char **args)
 
 int main()
 {
+    clear();
+    shellb();
+    working_dir();
+ 
     char command[MAX_COMMAND_LENGHT];
     char *args[MAX_ARGS];
 

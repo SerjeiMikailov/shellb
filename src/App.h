@@ -13,3 +13,7 @@
 #define MAX_PATH 50000
 
 void remove_directory(const char *path);
+char* get_user();
+void clear();
+void working_dir();
+void shellb();
