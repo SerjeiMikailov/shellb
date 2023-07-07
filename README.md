@@ -1,21 +1,13 @@
-# _ShellB - "A better Shell than Shell"_
+<h1>ShellB - "A better Shell than Shell"</h1>
 
-### So, How it works? 
-So simple, is just a Shell with some "new features"
+<p>How does it works? So simple, it's just a Shell with some "new features</p>
+<p>When I say "features," I'm referring to new commands and improvements to the existing ones</p>
 
 ---
 
- ### What kind of "features"? (you say)...
- 
- - For exemple, the "mkdir" now is "cf" {cf = create folder}
- 
-      ![image](https://github.com/SerjeiMikailov/shellb/assets/75023574/99683a56-63e4-40ba-a46f-efdf0ca989ae)
+<img src="https://github.com/SerjeiMikailov/shellb/assets/75023574/600abfce-5dcf-47fb-9cdd-b6310f49743a" alt="image">
+<p>(style based in ubuntu terminal)</p>
 
- 
-- The "rm" to remove folder, don't need additional args
+<hr>
 
-     ![image](https://github.com/SerjeiMikailov/shellb/assets/75023574/75eb27f8-8f97-4e1f-b810-0f0bb56aca10)
- 
- ---
- 
-### And this kind of stuff,  this project will be updated in some near future (maybe tomorrow)
+<h3>This project will be updated in some near future (maybe tomorrow)</h3>
