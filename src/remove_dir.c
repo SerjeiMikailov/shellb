@@ -3,7 +3,7 @@
 void remove_directory(const char *path) {
     DIR *dir = opendir(path);
     if (dir == NULL) {
-        printf("Error opening directory\n");
+        puts("Error opening directory");
         return;
     }
 
@@ -17,7 +17,7 @@ void remove_directory(const char *path) {
 
         struct stat st;
         if (lstat(entry_path, &st) == -1) {
-            printf("Error getting file/directory information\n");
+            puts("Error getting file/directory information");
             continue;
         }
 
