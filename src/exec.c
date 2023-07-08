@@ -5,6 +5,6 @@ void executeSystemCommand(const char* command) {
     int result = system(systemCommand);
 
     if (result == -1) {
-        printf("Erro ao executar o comando: %s\n", command);
+        printf("Error: %s\n", command);
     }
 }
