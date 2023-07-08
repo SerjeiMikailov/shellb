@@ -1,5 +1,19 @@
 #include "App.h"
 
+/*
+
+----------------------------------
+|                                |
+|             ShellB             |
+|                                |
+|          Version 1.06          |
+|                                |
+----------------------------------
+
+This version is so bad, please see the unstable (much better)
+
+*/
+
 int main()
 {
     clear();
