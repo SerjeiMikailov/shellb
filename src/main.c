@@ -1,5 +1,19 @@
 #include "App.h"
 
+/*
+----------------------------------
+|                                |
+|             ShellB             |
+|                                |
+|          Version 1.07          |
+|                                |
+----------------------------------
+
+Unstable build version
+This version may cointain bugs and can be deprecated more quickly than the stable version
+
+*/
+
 int main()
 {
     clear();

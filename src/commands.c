@@ -127,15 +127,38 @@ void execute_command(char **args)
     {
         clear();
     }
-    else if (args[0][0] == '!' && args[0][1] != '\0') { // system command
+    /*
+    /////////////
+    else if (args[0][0] == '!' && args[0][1] != '\0') { // system level command
         executeSystemCommand(args[0]);
     }
+    ////////////
+    */
     else if (strcmp(args[0], "ram") == 0) // ram usage
     {
         print_memory_usage();
     }
-    else
+    else if (strcmp(args[0], "exit") == 0) // exit command
     {
-        printf("Unknow: %s\n", args[0]);
+        puts("Exiting...");
+        exit(0);
+    }
+    else
+    { 
+        char command[MAX_COMMAND_LENGHT] = {0};  // now running native by default
+        strcpy(command, args[0]);                       
+
+        for (int i = 1; args[i] != NULL; i++)
+        {
+            strcat(command, " ");
+            strcat(command, args[i]);
+        }
+
+        int result = system(command);
+
+        if (result == -1)
+        {
+            printf("Error executing command: %s\n", command);
+        }
     }
 }

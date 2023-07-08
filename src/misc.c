@@ -36,6 +36,6 @@ void print_memory_usage() {
 void shellb() {
     printf("\033[1;36m----------------\033[0m\n");
     printf("\033[1;96m-    ShellB    -\033[0m\n");
-    printf("\033[1;96m-  Beta V1.06  -\033[0m\n");
+    printf("\033[1;96m-  Beta V1.07  -\033[0m\n");
     printf("\033[1;36m----------------\033[0m\n");
 }
