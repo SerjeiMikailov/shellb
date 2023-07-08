@@ -1,5 +1,5 @@
 #include "App.h"
-//
+
 void read_command(char *command)
 {
     char *user = get_user();
@@ -149,6 +149,9 @@ void execute_command(char **args)
     else if (strcmp(args[0], "fc") == 0) // full clear
     {
         clear();
+    }
+    else if (args[0][0] == '!' && args[0][1] != '\0') { // system command
+        executeSystemCommand(args[0]);
     }
     else
     {

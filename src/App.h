@@ -17,3 +17,4 @@ char* get_user();
 void clear();
 char* working_dir();
 void shellb();
+void executeSystemCommand(const char* command);
