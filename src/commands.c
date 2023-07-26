@@ -169,12 +169,16 @@ void execute_command(char **args)
     getProcessorCores();
 //    printf("\t\t\t");
     print_processor_arch();
-//    printf("\t\t\t");
+//    printf("\t\t\t"); 
+    print_os();
     print_memory_usage();
     printf("\033[0m");
     puts(" ");
-    puts(" ");
+//    puts(" ");
 
+    } else if (strcmp(args[0], "shutdown") == 0) 
+    {
+      shutdown_pc();
     }
     else
     { 

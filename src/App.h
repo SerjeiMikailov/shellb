@@ -27,10 +27,12 @@ void executeSystemCommand(const char* command);
 void getProcessorCores(void);
 void getProcessorInfo(void);
 void print_memory_usage(void);
+void print_os(void); 
 void print_processor_arch(void);
 char* get_user(void);
 
 // misc
+void shutdown_pc(void);
 void remove_directory(const char *path);
 void clear(void);
 char* working_dir(void);

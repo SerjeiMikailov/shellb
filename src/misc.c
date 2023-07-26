@@ -9,6 +9,30 @@ void clear(void)
     #endif
 }
 
+void shutdown_pc(void)
+{
+  #ifdef __linux__
+    FILE* fp = popen("uname -a", "r");
+        if (fp == NULL) {
+            printf("Error determining system information.\n");
+            return;
+        }
+        char buffer[128];
+        if (fgets(buffer, sizeof(buffer), fp) != NULL) {
+            if (strstr(buffer, "Microsoft") != NULL) {
+                system("./externals/wsl_shutdown.sh");
+            } else {
+                system("shutdown -h now");
+            }
+        }
+        pclose(fp);
+  #elif _WIN32
+    system("./externals/shutdown.bat");
+  #else
+    puts("Not supported");
+  #endif
+}
+
 char* working_dir(void) {
     char cwd[1024];
     if (getcwd(cwd, sizeof(cwd)) != NULL) {

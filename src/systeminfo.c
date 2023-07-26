@@ -6,11 +6,56 @@
     #include <unistd.h>
 #endif
 
+void print_os(void) {
+#ifdef _WIN32
+    OSVERSIONINFO osvi;
+    ZeroMemory(&osvi, sizeof(OSVERSIONINFO));
+    osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+    if (GetVersionEx(&osvi)) {
+        if (osvi.dwMajorVersion == 10) {
+            printf("Operating System: Windows 10\n");
+        } else if (osvi.dwMajorVersion == 6 && osvi.dwMinorVersion == 3) {
+            printf("Operating System: Windows 8.1\n");
+        } else if (osvi.dwMajorVersion == 6 && osvi.dwMinorVersion == 2) {
+            printf("Operating System: Windows 8\n");
+        } else if (osvi.dwMajorVersion == 6 && osvi.dwMinorVersion == 1) {
+            printf("Operating System: Windows 7\n");
+        } else {
+            printf("Operating System: Windows (Version %d.%d)\n", osvi.dwMajorVersion, osvi.dwMinorVersion);
+        }
+    } else {
+        printf("Operating System: Unknown\n");
+    }
+#else
+    FILE *os_release = fopen("/etc/os-release", "r");
+    if (os_release == NULL) {
+        printf("Operating System: Unknown\n");
+        return;
+    }
+    char line[256];
+    while (fgets(line, sizeof(line), os_release)) {
+        if (strstr(line, "PRETTY_NAME")) {
+            char *start = strchr(line, '"');
+            if (start) {
+                char *end = strrchr(start + 1, '"');
+                if (end) {
+                    *end = '\0';
+                    printf("Operating System: %s\n", start + 1);
+                    fclose(os_release);
+                    return;
+                }
+            }
+        }
+    }
+    fclose(os_release);
+    printf("Operating System: Unknown\n");
+#endif
+}
+
 void getProcessorInfo(void)
 {
 #ifdef _WIN32
-    // Windows-specific code to get the processor name here
-    char processorName[49]; // Adjust the buffer size as needed
+    char processorName[49]; 
     if (GetEnvironmentVariable("PROCESSOR_IDENTIFIER", processorName, 49)) {
         printf("Processor Name: %s\n", processorName);
     } else {
@@ -22,16 +67,13 @@ void getProcessorInfo(void)
         perror("Error executing command");
         return;
     }
-
-    char processorName[1024]; // Adjust the buffer size as needed
+    char processorName[1024];
     if (fgets(processorName, sizeof(processorName), fp)) {
-        // Remove the trailing newline character
         processorName[strcspn(processorName, "\n")] = '\0';
         printf("Processor Name: %s\n", processorName);
     } else {
         printf("Failed to retrieve processor name\n");
     }
-
     pclose(fp);
 #endif
 }
@@ -49,7 +91,6 @@ void getProcessorCores(void)
         perror("Error executing command");
         return;
     }
-
     char cores[256];
     if (fgets(cores, sizeof(cores), fp))
     {
