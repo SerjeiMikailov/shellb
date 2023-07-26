@@ -1,36 +1,20 @@
 #include "App.h"
 
 /*
-<<<<<<< HEAD
-
-=======
->>>>>>> unstable
 ----------------------------------
 |                                |
 |             ShellB             |
 |                                |
-<<<<<<< HEAD
-|          Version 1.06          |
+|          Version 1.08          |
 |                                |
 ----------------------------------
 
-This version is so bad, please see the unstable (much better)
-
-*/
-
-int main()
-=======
-|          Version 1.07          |
-|                                |
-----------------------------------
-
-Unstable build version
-This version may cointain bugs and can be deprecated more quickly than the stable version
+Main build version
+Stable v2
 
 */
 
 int main(void)
->>>>>>> unstable
 {
     clear();
     shellb();
