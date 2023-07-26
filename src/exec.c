@@ -1,10 +1,33 @@
 #include "App.h"
 
-void executeSystemCommand(const char* command) {
-    const char* systemCommand = command + 1;
-    int result = system(systemCommand);
+/*
+----------------------------------------
+|                                      |
+|            Deprecated file           |
+|                                      |
+|          Deprecated in V1.07         |
+|                                      |
+----------------------------------------
+*/
 
-    if (result == -1) {
-        printf("Error: %s\n", command);
+/*
+void executeSystemCommand(const char* command)
+{
+    const char* systemCommand = command + 1;
+
+    FILE* pipe = popen(systemCommand, "r");
+    if (!pipe)
+    {
+        printf("Failed to execute command: %s\n", systemCommand);
+        return;
     }
+
+    char buffer[128];
+    while (fgets(buffer, sizeof(buffer), pipe) != NULL)
+    {
+        printf("%s", buffer);
+    }
+
+    pclose(pipe);
 }
+*/

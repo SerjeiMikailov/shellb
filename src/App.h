@@ -23,10 +23,15 @@ void parse_command(char *command, char **args);
 // system level executions
 void executeSystemCommand(const char* command);
 
+// get system info
+void getProcessorCores(void);
+void getProcessorInfo(void);
+void print_memory_usage(void);
+void print_processor_arch(void);
+char* get_user(void);
+
 // misc
-void print_memory_usage();
 void remove_directory(const char *path);
-char* get_user();
-void clear();
-char* working_dir();
-void shellb();
+void clear(void);
+char* working_dir(void);
+void shellb(void);

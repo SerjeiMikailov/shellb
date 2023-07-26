@@ -1,6 +1,6 @@
 #include "App.h"
 
-void clear()
+void clear(void)
 {
     #ifdef _WIN32
         system("cls");  
@@ -9,11 +9,7 @@ void clear()
     #endif
 }
 
-char* get_user() {
-    return getenv("USER");
-}
-
-char* working_dir() {
+char* working_dir(void) {
     char cwd[1024];
     if (getcwd(cwd, sizeof(cwd)) != NULL) {
         return strdup(cwd);
@@ -23,19 +19,9 @@ char* working_dir() {
     }
 }
 
-void print_memory_usage() {
-    struct rusage usage;
-    if (getrusage(RUSAGE_SELF, &usage) == 0) {
-        long ram_usage = usage.ru_maxrss;
-        printf("Memory usage: %ld KB\n", ram_usage);
-    } else {
-        puts("Failed to retrieve memory usage");
-    }
-}
-
-void shellb() {
+void shellb(void) {
     printf("\033[1;36m----------------\033[0m\n");
     printf("\033[1;96m-    ShellB    -\033[0m\n");
-    printf("\033[1;96m-  Beta V1.06  -\033[0m\n");
+    printf("\033[1;96m-  Beta V1.07  -\033[0m\n");
     printf("\033[1;36m----------------\033[0m\n");
 }
