@@ -14,7 +14,7 @@ This version may cointain bugs and can be deprecated more quickly than the stabl
 
 */
 
-int main()
+int main(void)
 {
     clear();
     shellb();

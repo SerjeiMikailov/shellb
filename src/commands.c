@@ -129,7 +129,7 @@ void execute_command(char **args)
     }
     /*
     /////////////
-    else if (args[0][0] == '!' && args[0][1] != '\0') { // system level command
+    else (args[0][0] == '!' && args[0][1] != '\0') { // system level command
         executeSystemCommand(args[0]);
     }
     ////////////
@@ -142,6 +142,39 @@ void execute_command(char **args)
     {
         puts("Exiting...");
         exit(0);
+    }
+    else if (strcmp(args[0], "nf") == 0) // ShellB "neofetch"
+    {
+    clear();
+
+    char asciiArt[] =
+          "---------------------\n"
+          "|  ######   ######  |\n"
+          "| #      #  #     # |\n"
+          "|  #     #  #     # |\n"
+          "|  #####    ######  |\n"
+          "|       #   #     # |\n"
+          "| #     #   #     # |\n"
+          "| #####     ######  |\n"
+          "---------------------\n";
+
+    printf("\033[1;36m");
+    printf("%s", asciiArt);
+    printf("\033[0m");
+       
+    printf("\033[1;94m");
+//    printf("\t\t\t");
+    getProcessorInfo();
+//    printf("\t\t\t");
+    getProcessorCores();
+//    printf("\t\t\t");
+    print_processor_arch();
+//    printf("\t\t\t");
+    print_memory_usage();
+    printf("\033[0m");
+    puts(" ");
+    puts(" ");
+
     }
     else
     { 
