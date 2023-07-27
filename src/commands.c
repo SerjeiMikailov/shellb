@@ -187,6 +187,9 @@ void execute_command(char **args)
             return;
         }
         createCFile(args[1], args[2]);
+    } else if(strcmp(args[0], "te") == 0)
+    {
+        te();
     }
     else
     { 

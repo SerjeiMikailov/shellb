@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 void createCFile(const char* filename, const char* content);
+void te(void);
 
 #ifdef __cplusplus
 }

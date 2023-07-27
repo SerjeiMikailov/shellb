@@ -9,6 +9,8 @@
 #include <limits.h>
 #include <sys/resource.h>
 
+#include "./shell_script/generator.h"
+
 #define MAX_COMMAND_LENGHT 100
 #define MAX_ARGS 20
 #define MAX_PATH 50000

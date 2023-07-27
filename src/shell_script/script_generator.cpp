@@ -13,3 +13,8 @@ void createCFile(const char* filename, const char* content) {
     file.close();
     std::cout << "File " << filename << " created successfully." << std::endl;
 }
+
+void te()
+{
+  std::cout << "Cleitus" << std::endl;
+}
