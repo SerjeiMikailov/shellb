@@ -22,7 +22,7 @@ int main(void)
 
     char command[MAX_COMMAND_LENGHT];
     char *args[MAX_ARGS];
-
+    
     while (1)
     { 
         read_command(command);

@@ -1,7 +1,5 @@
 #pragma once
 
-#include "./shell_script/SBscript.h"
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
