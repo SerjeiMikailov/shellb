@@ -17,7 +17,7 @@ HEADERS = $(wildcard $(SRC_DIR)/*.h) $(wildcard $(SRC_DIR)/*.hpp)
 
 all: $(OUTPUT_DIR)/main
 
-$(OUTPUT_DIR)/main: $(C_OBJS) $(CPP_OBJS)
+$(OUTPUT_DIR)/main: $(C_OBJS) $(CPP_OBJS) $(OUTPUT_DIR)/libSBscript.a
 	$(CXX) $(LDFLAGS) -o $@ $^
 
 $(OUTPUT_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
@@ -26,8 +26,11 @@ $(OUTPUT_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 $(OUTPUT_DIR)/%.o: $(SRC_DIR)/%.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+$(OUTPUT_DIR)/libSBscript.a: $(OUTPUT_DIR)/script_generator.o
+	ar rcs $@ $^
+
 clean:
-	rm -f $(OUTPUT_DIR)/main $(OUTPUT_DIR)/*.o
+	rm -f $(OUTPUT_DIR)/main $(OUTPUT_DIR)/*.o $(OUTPUT_DIR)/libSBscript.a
 
 run: $(OUTPUT_DIR)/main
 	./$(OUTPUT_DIR)/main

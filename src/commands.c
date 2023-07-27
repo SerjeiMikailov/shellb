@@ -1,4 +1,5 @@
 #include "App.h"
+#include "./shell_script/SBscript.h"
 
 void execute_command(char **args)
 {
@@ -179,6 +180,13 @@ void execute_command(char **args)
     } else if (strcmp(args[0], "shutdown") == 0) 
     {
       shutdown_pc();
+    } else if (strcmp(args[0], "genscript") == 0)
+    {
+      if (args[1] == NULL || args[2] == NULL) {
+            puts("Usage: createfile <filename> <content>");
+            return;
+        }
+        createCFile(args[1], args[2]);
     }
     else
     { 
