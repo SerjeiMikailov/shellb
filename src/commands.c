@@ -1,5 +1,5 @@
 #include "App.h"
-#include "./shell_script/SBscript.h"
+#include "./shell_script/generator.h"
 
 void execute_command(char **args)
 {

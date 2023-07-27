@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 
-#include "SBscript.h"
+#include "generator.h"
 
 void createCFile(const char* filename, const char* content) {
     std::ofstream file(filename);

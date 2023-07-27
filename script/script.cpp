@@ -82,10 +82,15 @@ void Interpreter::execute() {
     } while (token.type != END_OF_FILE);
 }
 
+#include "test.h"
+
 int main() {
     std::string source_code = "HI HI HI";
     Interpreter interpreter(source_code);
     interpreter.execute();
+
+    t();
+
     return 0;
 }
 
