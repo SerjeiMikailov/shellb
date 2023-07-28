@@ -1,4 +1,5 @@
 #include "App.h"
+#include <stdio.h>
 
 void clear(void)
 {
@@ -31,6 +32,17 @@ void shutdown_pc(void)
   #else
     puts("Not supported");
   #endif
+}
+
+void compile_script(void)
+{
+  system("(cd script_area/compiler/ && ./run.sh)");
+  puts("Compiled with success");
+}
+
+void run_script(void)
+{
+  system("(cd script_area/bin && ./shellscript)"); 
 }
 
 char* working_dir(void) {

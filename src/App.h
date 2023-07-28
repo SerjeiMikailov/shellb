@@ -33,6 +33,10 @@ void print_os(void);
 void print_processor_arch(void);
 char* get_user(void);
 
+// script language integration
+void run_script(void);
+void compile_script(void);
+
 // misc
 void shutdown_pc(void);
 void remove_directory(const char *path);

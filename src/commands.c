@@ -177,19 +177,25 @@ void execute_command(char **args)
     puts(" ");
 //    puts(" ");
 
-    } else if (strcmp(args[0], "shutdown") == 0) 
+    } else if (strcmp(args[0], "shutdown") == 0) // shutdown 
     {
       shutdown_pc();
-    } else if (strcmp(args[0], "genscript") == 0)
+    } else if (strcmp(args[0], "mkf") == 0)  // make file
     {
-      if (args[1] == NULL || args[2] == NULL) {
+      if (args[1] == NULL) {
             puts("Usage: createfile <filename> <content>");
             return;
         }
-        createCFile(args[1], args[2]);
-    } else if(strcmp(args[0], "te") == 0)
+        createFile(args[1]);
+    } else if(strcmp(args[0], "te") == 0) // test command
     {
         te();
+    } else if(strcmp(args[0], "sbcomp") == 0) // shell script compile command
+    {
+        compile_script();
+    } else if(strcmp(args[0], "sbrun") == 0)  // shell script run command
+    {
+        run_script();
     }
     else
     { 
