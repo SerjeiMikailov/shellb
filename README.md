@@ -9,7 +9,7 @@ Lets take a look in this features:
   
 Standard commands like "cd", "ls" and etc are remakes for a lot of reasons, for exemple:
 ShellB can auto-compile and have functionalities to custom the default commands. So, if you want modify the "ls" command, go ahead.
-You can rework all the shell if you want (even the name if you want).
+You can rework all the shell (even the name if you want).
 
 ---
 
