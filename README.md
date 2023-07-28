@@ -36,7 +36,7 @@ How to use: re {file that you want to change the name} {new name}
 
 RM ( or remove ) is the rework of default "rm".
 
-Same way to use but don't need parameters, exemple: rm {file you want to remove}
+Same way to use, but don't need parameters. Exemple: rm {file you want to remove}
 
 ### -> ram
 
