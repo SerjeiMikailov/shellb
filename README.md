@@ -52,7 +52,7 @@ NF - Based on neofetch. Prints the system info.
 
 ### -> shutdown
 
-SHUTDOWN - Just a shutdown but doesn't need args. (if you using windows or try to use in wsl maybe don't work)
+SHUTDOWN - Just a shutdown but doesn't need args. (if you are using windows or try to use in wsl maybe doesn't work)
 
 ### -> mkf
 
