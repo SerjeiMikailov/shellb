@@ -1,30 +1,6 @@
-#include <iostream>
-#include <string>
-#include <vector>
+#include "script.hpp"
 
-enum TokenType {
-    KEYWORD_HI,
-    END_OF_FILE,
-};
-
-struct Token {
-    TokenType type;
-    std::string lexeme;
-};
-
-class Lexer {
-public:
-    explicit Lexer(const std::string& source) : source_(source), current_(0) {}
-    Token getNextToken();
-
-private:
-    char advance();
-    bool isAtEnd() const;
-    void skipWhitespace();
-
-    std::string source_;
-    size_t current_;
-};
+Lexer::Lexer(const std::string& source) : source_(source), current_(0) {}
 
 Token Lexer::getNextToken() {
     skipWhitespace();
@@ -62,15 +38,7 @@ void Lexer::skipWhitespace() {
     }
 }
 
-class Interpreter {
-public:
-    explicit Interpreter(const std::string& source) : lexer_(source) {}
-
-    void execute();
-
-private:
-    Lexer lexer_;
-};
+Interpreter::Interpreter(const std::string& source) : lexer_(source) {}
 
 void Interpreter::execute() {
     Token token;
@@ -81,16 +49,3 @@ void Interpreter::execute() {
         }
     } while (token.type != END_OF_FILE);
 }
-
-#include "test.h"
-
-int main() {
-    std::string source_code = "HI HI HI";
-    Interpreter interpreter(source_code);
-    interpreter.execute();
-
-    t();
-
-    return 0;
-}
-
