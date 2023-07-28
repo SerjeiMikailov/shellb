@@ -1,7 +1,7 @@
 # ShellB
 
  ShellB is a custom Shell with some new features and rework functionalities.
-Lets take a look in this features:
+Lets take a look in these features:
 
 ---
 
