@@ -11,7 +11,7 @@
 ----------------------------------
 
 Main build version
-Stable v2
+Stable v3
 
 */
 
