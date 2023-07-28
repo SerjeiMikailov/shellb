@@ -63,7 +63,7 @@ How to use: "mkf exemple.c"
 
 ShellB runs commands in system level by default. If some command "don't exist" ShellB will execute in system level.
 
-For exemple: Npm commands or compilers like clang are external commands, then ShellB will execute them equally but in system level using you default shell.
+For exemple: Npm commands or compilers like clang are external commands, then ShellB will execute them equally, but in system level using your default shell.
 
 ---
 
