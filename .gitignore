@@ -4,3 +4,5 @@ build/
 build/main
 build/main.o
 build/remove_dir.o
+installer/install.class
+installer/installer.jar
