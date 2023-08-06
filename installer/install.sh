@@ -8,6 +8,4 @@ make install
 
 make
 
-make run
-
 echo "Installation complete!"
