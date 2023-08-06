@@ -1,5 +1,6 @@
 #include "App.h"
 #include "./create_file/generator.h"
+#include <stdio.h>
 
 void execute_command(char **args)
 {
@@ -196,6 +197,9 @@ void execute_command(char **args)
     } else if(strcmp(args[0], "sbrun") == 0)  // shell script run command
     {
         run_script();
+    } else if(strcmp(args[0], "help") == 0)
+    {
+        puts("https://www.youtube.com/watch?v=GaptpvBASxo&ab_channel=ANCAPSU");  
     }
     else
     { 
