@@ -12,9 +12,9 @@ echo "Compilation: success"
 
 cd build 
 
-cp shellb /usr/local/bin/
+sudo cp shellb /usr/local/bin/
 
-chmod +x /usr/local/bin/shellb
+sudo chmod +x /usr/local/bin/shellb
 
 hash -r
 
