@@ -8,7 +8,7 @@ I'm so stupid to make something good, just enjoy this magnific creation...
 
 */
 
-#include "../script/script.hpp"
+#include "script.hpp"
 
 int main() {
     std::string source_code = "HI HI HI";

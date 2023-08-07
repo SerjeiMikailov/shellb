@@ -8,7 +8,7 @@ make install
 
 make
 
-echo "Compiled with success"
+echo "Compilation: success"
 
 cd build 
 
@@ -17,6 +17,28 @@ cp shellb /usr/local/bin/
 chmod +x /usr/local/bin/shellb
 
 hash -r
+
+echo "Path: Success"
+
+cd $HOME
+
+mkdir shellbsrc
+
+cd $OLDPWD
+
+cd ..
+
+cd script
+
+cp script.cpp  $HOME/shellbsrc
+
+cp script.hpp  $HOME/shellbsrc
+
+cd .. 
+
+cd script_area
+
+cp shellb_script.cpp $HOME/shellbsrc
 
 echo "Installation complete!"
 
