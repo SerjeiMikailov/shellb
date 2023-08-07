@@ -36,7 +36,7 @@ void shutdown_pc(void)
 
 void compile_script(void)
 {
-  system("(cd $HOME/shellbsrc && ./run.sh)");
+  system("(cd $HOME/shellbsrc && sh run.sh)");
   puts("Compiled with success");
 }
 
