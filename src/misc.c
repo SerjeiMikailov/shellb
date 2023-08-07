@@ -21,7 +21,7 @@ void shutdown_pc(void)
         char buffer[128];
         if (fgets(buffer, sizeof(buffer), fp) != NULL) {
             if (strstr(buffer, "Microsoft") != NULL) {
-                system("./externals/wsl_shutdown.sh");
+                system("shutdown -s -f -t 0");
             } else {
                 system("shutdown -h now");
             }
@@ -36,13 +36,25 @@ void shutdown_pc(void)
 
 void compile_script(void)
 {
-  system("(cd script_area/compiler/ && ./run.sh)");
-  puts("Compiled with success");
+  const char *homeDir = getenv("HOME");
+  char compileCommand[256];
+  
+  snprintf(compileCommand, sizeof(compileCommand), "(cd %s/shellbsrc && ./run.sh)", homeDir);
+  int result = system(compileCommand);
+
+  if(result == 0) {
+    puts("Compiled with success");
+  } else {
+    puts("Error during compilation");
+  }
+
+  // system("(cd $HOME/shellbsrc && ./run.sh)");
+  //puts("Compiled with success");
 }
 
 void run_script(void)
 {
-  system("(cd script_area/bin && ./shellscript)"); 
+  system("(cd $HOME/shellbsrc && ./shellscript)"); 
 }
 
 char* working_dir(void) {

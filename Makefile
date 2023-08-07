@@ -16,9 +16,9 @@ CPP_OBJS = $(patsubst $(SRC_DIR)/%.cpp,$(OUTPUT_DIR)/%.o,$(CPP_SRCS))
 
 HEADERS = $(wildcard $(SRC_DIR)/*.h) $(wildcard $(SRC_DIR)/create_file/*.h) $(wildcard $(SRC_DIR)/*.hpp) $(wildcard $(SRC_DIR)/create_file/*.hpp)
 
-all: $(OUTPUT_DIR)/main
+all: $(OUTPUT_DIR)/shellb
 
-$(OUTPUT_DIR)/main: $(C_OBJS) $(CPP_OBJS)
+$(OUTPUT_DIR)/shellb: $(C_OBJS) $(CPP_OBJS)
 	$(CXX) $(LDFLAGS) -o $@ $^
 
 $(OUTPUT_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
@@ -27,7 +27,6 @@ $(OUTPUT_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
 $(OUTPUT_DIR)/%.o: $(SRC_DIR)/%.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Create the output directory and create_file directory if they don't exist
 $(shell mkdir -p $(OUTPUT_DIR) $(CREATE_FILE_DIR))
 
 $(CREATE_FILE_DIR)/%.o: $(SRC_DIR)/create_file/%.cpp $(HEADERS)
@@ -36,5 +35,5 @@ $(CREATE_FILE_DIR)/%.o: $(SRC_DIR)/create_file/%.cpp $(HEADERS)
 clean:
 	rm -f $(OUTPUT_DIR)/main $(OUTPUT_DIR)/*.o $(CREATE_FILE_DIR)/*.o
 
-run: $(OUTPUT_DIR)/main
-	./$(OUTPUT_DIR)/main
+run: $(OUTPUT_DIR)/shellb
+	./$(OUTPUT_DIR)/shellb
