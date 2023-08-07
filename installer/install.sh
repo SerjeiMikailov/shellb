@@ -40,6 +40,10 @@ cd script_area
 
 cp shellb_script.cpp $HOME/shellbsrc
 
+cd compiler
+
+cp run.sh $HOME/shellbsrc
+
 echo "Installation complete!"
 
 echo "Now type shellb in your terminal"
