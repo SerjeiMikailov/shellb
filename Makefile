@@ -33,7 +33,7 @@ $(CREATE_FILE_DIR)/%.o: $(SRC_DIR)/create_file/%.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OUTPUT_DIR)/main $(OUTPUT_DIR)/*.o $(CREATE_FILE_DIR)/*.o
+	rm -f $(OUTPUT_DIR)/shellb $(OUTPUT_DIR)/*.o $(CREATE_FILE_DIR)/*.o
 
 run: $(OUTPUT_DIR)/shellb
 	./$(OUTPUT_DIR)/shellb
