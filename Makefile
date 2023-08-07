@@ -16,9 +16,9 @@ CPP_OBJS = $(patsubst $(SRC_DIR)/%.cpp,$(OUTPUT_DIR)/%.o,$(CPP_SRCS))
 
 HEADERS = $(wildcard $(SRC_DIR)/*.h) $(wildcard $(SRC_DIR)/create_file/*.h) $(wildcard $(SRC_DIR)/*.hpp) $(wildcard $(SRC_DIR)/create_file/*.hpp)
 
-all: $(OUTPUT_DIR)/main
+all: $(OUTPUT_DIR)/shellb
 
-$(OUTPUT_DIR)/main: $(C_OBJS) $(CPP_OBJS)
+$(OUTPUT_DIR)/shellb: $(C_OBJS) $(CPP_OBJS)
 	$(CXX) $(LDFLAGS) -o $@ $^
 
 $(OUTPUT_DIR)/%.o: $(SRC_DIR)/%.c $(HEADERS)
@@ -34,7 +34,7 @@ $(CREATE_FILE_DIR)/%.o: $(SRC_DIR)/create_file/%.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OUTPUT_DIR)/main $(OUTPUT_DIR)/*.o $(CREATE_FILE_DIR)/*.o
+	rm -f $(OUTPUT_DIR)/shellb $(OUTPUT_DIR)/*.o $(CREATE_FILE_DIR)/*.o
 
-run: $(OUTPUT_DIR)/main
-	./$(OUTPUT_DIR)/main
+run: $(OUTPUT_DIR)/shellb
+	./$(OUTPUT_DIR)/shellb
