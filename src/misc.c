@@ -36,20 +36,8 @@ void shutdown_pc(void)
 
 void compile_script(void)
 {
-  const char *homeDir = getenv("HOME");
-  char compileCommand[256];
-  
-  snprintf(compileCommand, sizeof(compileCommand), "(cd %s/shellbsrc && ./run.sh)", homeDir);
-  int result = system(compileCommand);
-
-  if(result == 0) {
-    puts("Compiled with success");
-  } else {
-    puts("Error during compilation");
-  }
-
-  // system("(cd $HOME/shellbsrc && ./run.sh)");
-  //puts("Compiled with success");
+  system("(cd $HOME/shellbsrc && ./run.sh)");
+  puts("Compiled with success");
 }
 
 void run_script(void)
