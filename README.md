@@ -67,4 +67,4 @@ For example: Npm commands or compilers like clang are external commands, then Sh
 
 ---
 
-### Currently ShellB have more commands, but i will talk about them and the script language in the future.
+### ---> Currently ShellB have more commands, but i will talk about them and the script language in the future.

@@ -8,10 +8,11 @@ I'm so stupid to make something good, just enjoy this magnific creation...
 
 */
 
-#include "script.hpp"
+// #include "script.hpp" 
+#include "../script/script.hpp"
 
 int main() {
-    std::string source_code = "HI HI HI";
+    std::string source_code = "HI HI HI CLEAR";
     Interpreter interpreter(source_code);
     interpreter.execute();
     return 0;

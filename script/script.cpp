@@ -1,3 +1,5 @@
+#include <cstdlib>
+
 #include "script.hpp"
 
 Lexer::Lexer(const std::string& source) : source_(source), current_(0) {}
@@ -14,10 +16,19 @@ Token Lexer::getNextToken() {
     switch (c) {
         case 'H':
             if (source_[current_] == 'I') {
-                advance(); // consume 'I'
+                advance(); 
                 return {KEYWORD_HI, "HI"};
             }
             break;
+        case 'C':
+            if (source_[current_] == 'L' &&
+                source_[current_ + 1] == 'E' &&
+                source_[current_ + 2] == 'A' &&
+                source_[current_ + 3] == 'R') 
+                {
+                current_ += 4; 
+                return {KEYWORD_CLEAR, "CLEAR"};
+                }
         default:
             break;
     }
@@ -46,6 +57,9 @@ void Interpreter::execute() {
         token = lexer_.getNextToken();
         if (token.type == KEYWORD_HI) {
             std::cout << "HI" << std::endl;
+        }
+        if (token.type == KEYWORD_CLEAR) { 
+            system("clear");
         }
     } while (token.type != END_OF_FILE);
 }

@@ -6,12 +6,12 @@
 |                                |
 |             ShellB             |
 |                                |
-|          Version 1.11          |
+|          Version 1.12          |
 |                                |
 ----------------------------------
 
-Main build version
-Stable v3
+Unstable build version
+Unstable v3
 
 */
 

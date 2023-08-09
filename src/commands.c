@@ -199,10 +199,12 @@ void execute_command(char **args)
         run_script();
     } else if(strcmp(args[0], "help") == 0) // help 
     {
-        puts("https://github.com/SerjeiMikailov/shellb");  
+        puts("https://github.com/SerjeiMikailov/shellb"); 
     } else if(strcmp(args[0], "update") == 0)  // update
     {
-        puts("Type: updateshellb.sh");
+        puts(" ");
+        puts("--> Type updateshellb.sh");
+        puts(" ");
         puts("Or (just if you cant run the command above)");
         puts("Tutorial link:");
         puts("https://github.com/SerjeiMikailov/shellb/releases/tag/shell");

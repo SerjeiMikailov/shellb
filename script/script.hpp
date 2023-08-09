@@ -6,6 +6,7 @@
 
 enum TokenType {
     KEYWORD_HI,
+    KEYWORD_CLEAR,
     END_OF_FILE,
 };
 
