@@ -200,6 +200,13 @@ void execute_command(char **args)
     } else if(strcmp(args[0], "help") == 0)
     {
         puts("https://www.youtube.com/watch?v=GaptpvBASxo&ab_channel=ANCAPSU");  
+    } else if(strcmp(args[0], "update") == 0)
+    {
+      const char *folder = "/usr/local/bin/";
+      const char *file = "update.sh";
+
+      char command[256];
+      snprintf(command, sizeof(command), "xdg-open %s && cd %s && ./ %s", folder, folder, file );
     }
     else
     { 

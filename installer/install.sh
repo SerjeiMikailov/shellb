@@ -44,6 +44,12 @@ cd compiler
 
 cp run.sh $HOME/shellbsrc
 
+cd ../..
+
+cd installer 
+
+cp update.sh $HOME/shellbsrc/ 
+
 echo "Installation complete!"
 
 echo "Now type shellb in your terminal"
