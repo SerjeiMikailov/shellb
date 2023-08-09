@@ -17,3 +17,7 @@ cd shellb
 cd installer 
 
 sh install.sh
+
+cd ../.. 
+
+rm -rf shellb
