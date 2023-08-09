@@ -48,7 +48,11 @@ cd ../..
 
 cd installer 
 
-cp update.sh $HOME/shellbsrc/ 
+mv updateshellb.sh ~/bin/
+
+chmod +x ~/bin/updateshellb.sh
+
+hash -r
 
 echo "Installation complete!"
 
