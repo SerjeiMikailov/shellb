@@ -48,9 +48,11 @@ cd ../..
 
 cd installer 
 
-mv updateshellb.sh ~/bin/
+cp updateshellb.sh $HOME/shellbsrc
 
-chmod +x ~/bin/updateshellb.sh
+sudo mv updateshellb.sh /usr/local/bin
+
+sudo chmod +x /usr/local/bin/updateshellb.sh
 
 hash -r
 
