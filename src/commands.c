@@ -202,11 +202,19 @@ void execute_command(char **args)
         puts("https://www.youtube.com/watch?v=GaptpvBASxo&ab_channel=ANCAPSU");  
     } else if(strcmp(args[0], "update") == 0)
     {
-      const char *folder = "/usr/local/bin/";
-      const char *file = "update.sh";
+       const char *homePath = getenv("HOME");
+       const char *relativeFolderPath = "/shellbsrc";
+       const char *fileName = "update.sh";
 
-      char command[256];
-      snprintf(command, sizeof(command), "xdg-open %s && cd %s && ./ %s", folder, folder, file );
+       size_t fullPathLength = strlen(homePath) + strlen(relativeFolderPath) + 1;
+       char *fullPath = (char *)malloc(fullPathLength);
+
+       snprintf(fullPath, fullPathLength, "%s%s", homePath, relativeFolderPath);
+       char command[256];
+       snprintf(command, sizeof(command), "xdg-open %s && cd %s && ./%s", fullPath, fullPath, fileName);
+       
+       int result = system(command);
+       free(fullPath);
     }
     else
     { 
