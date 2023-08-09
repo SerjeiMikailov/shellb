@@ -197,27 +197,13 @@ void execute_command(char **args)
     } else if(strcmp(args[0], "sbrun") == 0)  // shell script run command
     {
         run_script();
-    } else if(strcmp(args[0], "help") == 0)
+    } else if(strcmp(args[0], "help") == 0) // help 
     {
-        puts("https://www.youtube.com/watch?v=GaptpvBASxo&ab_channel=ANCAPSU");  
-    } else if(strcmp(args[0], "update") == 0)
+        puts("https://github.com/SerjeiMikailov/shellb");  
+    } else if(strcmp(args[0], "update") == 0)  // update
     {
-       const char *homePath = getenv("HOME");
-       const char *relativeFolderPath = "/shellbsrc";
-       const char *fileName = "update.sh";
-
-       size_t fullPathLength = strlen(homePath) + strlen(relativeFolderPath) + 1;
-       char *fullPath = (char *)malloc(fullPathLength);
-
-       snprintf(fullPath, fullPathLength, "%s%s", homePath, relativeFolderPath);
-       char command[256];
-       snprintf(command, sizeof(command), "xdg-open %s && cd %s && ./%s", fullPath, fullPath, fileName);
-       
-       int result = system(command);
-       if (result == -1) {
-        fprintf(stderr, "Failed to execute command\n");
-    }
-       free(fullPath);
+        puts("Download link below:");
+        puts("https://github.com/SerjeiMikailov/shellb/releases/tag/shell");
     }
     else
     { 
