@@ -202,7 +202,9 @@ void execute_command(char **args)
         puts("https://github.com/SerjeiMikailov/shellb");  
     } else if(strcmp(args[0], "update") == 0)  // update
     {
-        puts("Download link below:");
+        puts("Type: updateshellb.sh");
+        puts("Or (just if you cant run the command above)");
+        puts("Tutorial link:");
         puts("https://github.com/SerjeiMikailov/shellb/releases/tag/shell");
     }
     else
