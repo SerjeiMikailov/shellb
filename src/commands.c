@@ -214,6 +214,10 @@ void execute_command(char **args)
        snprintf(command, sizeof(command), "xdg-open %s && cd %s && ./%s", fullPath, fullPath, fileName);
        
        int result = system(command);
+       if (result == -1) {
+        fprintf(stderr, "Failed to execute command\n");
+        return 1;
+    }
        free(fullPath);
     }
     else
