@@ -2,6 +2,10 @@
 
 #include "script.hpp"
 
+extern "C" {
+#include "../src/App.h"
+}
+
 Lexer::Lexer(const std::string& source) : source_(source), current_(0) {}
 
 Token Lexer::getNextToken() {

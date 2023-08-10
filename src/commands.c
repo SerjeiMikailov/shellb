@@ -188,9 +188,6 @@ void execute_command(char **args)
             return;
         }
         createFile(args[1]);
-    } else if(strcmp(args[0], "te") == 0) // test command
-    {
-        te();
     } else if(strcmp(args[0], "sbcomp") == 0) // shell script compile command
     {
         compile_script();
