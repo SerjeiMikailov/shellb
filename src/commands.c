@@ -1,5 +1,5 @@
 #include "App.h"
-#include "./create_file/generator.h"
+#include "generator.h"
 #include <stdio.h>
 
 void execute_command(char **args)

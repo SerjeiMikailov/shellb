@@ -10,7 +10,6 @@
 #include <sys/resource.h>
 
 #include "generator.h"
-// #include "./create_file/generator.h"
 
 #define MAX_COMMAND_LENGHT 100
 #define MAX_ARGS 20
