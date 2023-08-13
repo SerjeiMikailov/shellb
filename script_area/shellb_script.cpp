@@ -8,8 +8,8 @@ Just enjoy this magnific creation...
 
 */
 
-// #include "script.hpp" 
-#include "../script/script.hpp"
+#include "script.hpp" 
+// #include "../script/script.hpp"
 
 int main() {
     std::string source_code = "ls";

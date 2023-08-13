@@ -46,12 +46,19 @@ cp run.sh $HOME/shellbsrc
 
 cd ../..
 
+cd src 
+
+cp App.h $HOME/shellbsrc
+cp misc.c $HOME/shellbsrc
+
 cd installer 
 
 cp updateshellb.sh $HOME/shellbsrc
 
-sudo mv updateshellb.sh /usr/local/bin
+sudo mv uninstall.sh /usr/local/bin
+sudo chmod +x /usr/local/bin/uninstall.sh
 
+sudo mv updateshellb.sh /usr/local/bin
 sudo chmod +x /usr/local/bin/updateshellb.sh
 
 hash -r
