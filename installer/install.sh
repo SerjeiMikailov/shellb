@@ -51,7 +51,11 @@ cd src
 cp App.h $HOME/shellbsrc
 cp misc.c $HOME/shellbsrc
 
-cd ..
+cd create_file
+
+cp generator.h $HOME/shellbsrc
+
+cd ../..
 
 cd installer 
 
