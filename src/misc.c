@@ -6,7 +6,7 @@ void clear(void)
     #ifdef _WIN32
         system("cls");  
     #else
-        system("clear");
+        printf("\033[2J\033[H"); 
     #endif
 }
 
@@ -28,7 +28,7 @@ void shutdown_pc(void)
         }
         pclose(fp);
   #elif _WIN32
-    system("./externals/shutdown.bat");
+    system("shutdown -s -f -t 0");
   #else
     puts("Not supported");
   #endif

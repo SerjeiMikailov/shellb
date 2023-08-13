@@ -7,6 +7,7 @@
 enum TokenType {
     KEYWORD_HI,
     KEYWORD_CLEAR,
+    KEYWORD_LS,
     END_OF_FILE,
 };
 
@@ -24,6 +25,7 @@ private:
     char advance();
     bool isAtEnd() const;
     void skipWhitespace();
+    bool match(const std::string& expected);
 
     std::string source_;
     size_t current_;
@@ -39,4 +41,4 @@ private:
     Lexer lexer_;
 };
 
-#endif // INTERPRETER_HPP
+#endif 
