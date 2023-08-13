@@ -51,6 +51,8 @@ cd src
 cp App.h $HOME/shellbsrc
 cp misc.c $HOME/shellbsrc
 
+cd ..
+
 cd installer 
 
 cp updateshellb.sh $HOME/shellbsrc
