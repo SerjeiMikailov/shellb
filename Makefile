@@ -26,7 +26,7 @@ C_OBJ = $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(C_SRC))
 CPP_OBJ = $(patsubst $(SRC_DIR)/%.cpp, $(BUILD_DIR)/%.o, $(CPP_SRC))
 
 # Output executable
-TARGET = shellb
+TARGET = $(BUILD_DIR)/shellb
 
 # Make sure the build directory exists
 $(shell mkdir -p $(BUILD_DIR))
@@ -46,7 +46,7 @@ $(TARGET): $(C_OBJ) $(CPP_OBJ)
 .PHONY: clean run
 
 clean:
-	rm -rf $(BUILD_DIR) $(TARGET)
+	rm -rf $(BUILD_DIR)
 
 run: $(TARGET)
 	./$(TARGET)

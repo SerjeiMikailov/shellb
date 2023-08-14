@@ -4,8 +4,6 @@ git clone https://github.com/SerjeiMikailov/shellb.git
 
 cd shellb
 
-make install
-
 make
 
 echo "Compilation: success"
