@@ -3,8 +3,8 @@
 #include "script.hpp"
 
 extern "C" {
-#include "App.h"
-// #include "../src/App.h"
+// #include "App.h"
+#include "../src/App.h"
 }
 
 Lexer::Lexer(const std::string& source) : source_(source), current_(0) {}
