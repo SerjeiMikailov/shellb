@@ -1,8 +1,7 @@
 if [ "$1" = "--uninstall" ]; then
     
     read -p "Are you sure you want to uninstall? (y/n): " confirm
-    echo "DEBUG: confirm variable is set to '$confirm'"
-    
+   
     if [ "$confirm" = "y" ]; then
         echo "Uninstalling..."
         
