@@ -20,21 +20,32 @@ Token Lexer::getNextToken() {
 
     switch (c) {
         case 'H':
-            if (source_[current_]  == 'I') {
+            if (source_[current_]  == 'I') 
+            {
                 advance(); 
                 return {KEYWORD_HI, "HI"};
             }
             break;
         case 'l':
-            if (match("s")) {
+            if (match("s")) 
+            {
                 current_ += 1;
                 return {KEYWORD_LS, "ls"};
             }
               break;
         case 'c':
-            if (match("lear")) {
+            if (match("lear")) 
+            {
                 current_ += 4; 
                 return {KEYWORD_CLEAR, "clear"};
+            } else if(match("d"))
+            {
+                current_ += 1;
+                return {KEYWORD_CD, "cd"};
+            } else if(match("f"))
+            {
+                current_ += 1;
+                return {KEYWORD_CF, "cf"};
             }
             break;
         default:
@@ -90,6 +101,14 @@ void Interpreter::execute() {
         if(token.type == KEYWORD_LS)
         {
             system("ls");  
+        }
+        if(token.type == KEYWORD_CD)
+        {
+            system("cd");
+        }
+        if(token.type == KEYWORD_CF)
+        {
+            system("mkdir");
         }
     } while (token.type != END_OF_FILE);
 }

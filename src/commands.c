@@ -184,7 +184,7 @@ void execute_command(char **args)
     } else if (strcmp(args[0], "mkf") == 0)  // make file
     {
       if (args[1] == NULL) {
-            puts("Usage: createfile <filename> <content>");
+            puts("Usage: createfile <filename>");
             return;
         }
         createFile(args[1]);
