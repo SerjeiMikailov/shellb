@@ -1,4 +1,4 @@
-if [ "$1" == "--uninstall" ]; then
+if [ "$1" = "--uninstall" ]; then
     
     read -p "Are you sure you want to uninstall? (y/n): " confirm
     if [ "$confirm" == "y" ]; then
