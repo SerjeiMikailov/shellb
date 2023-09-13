@@ -205,6 +205,9 @@ void execute_command(char **args)
         puts("Or (just if you cant run the command above)");
         puts("Tutorial link:");
         puts("https://github.com/SerjeiMikailov/shellb/releases/tag/shell");
+    } else if(strcmp(args[0], "uninstall") == 0)  // uninstall
+    {
+        system("uninstall.sh --uninstall");  
     }
     else
     { 
