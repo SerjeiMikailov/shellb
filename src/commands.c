@@ -197,10 +197,10 @@ void execute_command(char **args)
     } else if(strcmp(args[0], "help") == 0) // help 
     {
         puts("https://github.com/SerjeiMikailov/shellb"); 
-    } else if(strcmp(args[0], "sb --update") == 0)  // update
+    } else if(strcmp(args[0], "sb--update") == 0)  // update
     {
         system("updateshellb.sh");
-    } else if(strcmp(args[0], "sb --uninstall") == 0)  // uninstall
+    } else if(strcmp(args[0], "sb--uninstall") == 0)  // uninstall
     {
         system("uninstall.sh --uninstall");  
     }
