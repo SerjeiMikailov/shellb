@@ -65,8 +65,8 @@ cp new_installer.sh $HOME/shellbsrc
 sudo mv uninstall.sh /usr/local/bin
 sudo chmod +x /usr/local/bin/uninstall.sh
 
-sudo mv new_installer.sh /usr/local/bin
-sudo chmod +x /usr/local/bin/updateshellb.sh
+sudo mv client_updater.sh /usr/local/bin
+sudo chmod +x /usr/local/bin/client_updater.sh
 
 hash -r
 
