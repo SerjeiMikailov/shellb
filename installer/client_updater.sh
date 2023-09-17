@@ -10,13 +10,13 @@ sudo rm -rf shellb
 
 cd $HOME
 
-git clone https://github.com/SerjeiMikailov/shellb.git
+git clone -b unstablev2 https://github.com/SerjeiMikailov/shellb.git
 
 cd shellb
 
 cd installer 
 
-sh install.sh
+sh new_installer.sh
 
 cd ../.. 
 
