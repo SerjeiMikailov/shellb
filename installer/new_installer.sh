@@ -52,7 +52,7 @@ cd ..
 
 cd installer 
 
-cp updateshellb.sh $HOME/shellbsrc
+cp new_installer.sh $HOME/shellbsrc
 
 sudo mv uninstall.sh /usr/local/bin
 sudo chmod +x /usr/local/bin/uninstall.sh
