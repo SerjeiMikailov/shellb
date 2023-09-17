@@ -10,23 +10,20 @@ sudo rm -rf shellb
 
 cd $HOME
 
-mkdir updatesb
+mkdir shellbsrc
 
-cd updatesb
+cd shellbsrc
 
 git clone -b unstablev2 https://github.com/SerjeiMikailov/shellb.git
 
-cd shellb
+cd shellb 
 
-cd installer 
+sh client_compiler.sh
 
-cp new_installer.sh $HOME/updatesb
+cd build
 
-cd $HOME
-cd updatesb
+sudo cp shellb /usr/local/bin
+sudo chmod +x /usr/local/bin/shellb
 
-sh new_installer.sh
-
-cd $HOME
-
-rm -rf updatesb
+hash -r
+echo "Now type shellb in your terminal"
