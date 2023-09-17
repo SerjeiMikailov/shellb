@@ -22,8 +22,8 @@ sudo chmod +x /usr/local/bin/shellb
 cd ..
 cd installer
 
-sudo cp client_updater /usr/local/bin
-sudo chmod +x /usr/local/bin/client_updater
+sudo cp client_updater.sh /usr/local/bin
+sudo chmod +x /usr/local/bin/client_updater.sh
 
 sudo cp uninstall.sh /usr/local/bin
 sudo chmod +x /usr/local/bin/uninstall.sh
