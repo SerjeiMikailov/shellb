@@ -1,5 +1,6 @@
 #include "App.h"
 #include "generator.h"
+#include "../config/config.h"
 #include <stdio.h>
 
 void execute_command(char **args)
@@ -184,7 +185,7 @@ void execute_command(char **args)
     } else if (strcmp(args[0], "mkf") == 0)  // make file
     {
       if (args[1] == NULL) {
-            puts("Usage: createfile <filename>");
+            puts("Usage: createfile <filename> <content>");
             return;
         }
         createFile(args[1]);
@@ -197,18 +198,19 @@ void execute_command(char **args)
     } else if(strcmp(args[0], "help") == 0) // help 
     {
         puts("https://github.com/SerjeiMikailov/shellb"); 
-    } else if(strcmp(args[0], "update") == 0)  // update
+    } else if(strcmp(args[0], "sb--update") == 0)  // update
     {
-        puts(" ");
-        puts("--> Type updateshellb.sh");
-        puts(" ");
-        puts("Or (just if you cant run the command above)");
-        puts("Tutorial link:");
-        puts("https://github.com/SerjeiMikailov/shellb/releases/tag/shell");
+        system("updateshellb.sh");
+    } else if(strcmp(args[0], "sb--uninstall") == 0)  // uninstall
+    {
+        system("uninstall.sh --uninstall");  
+    } else if(strcmp(args[0], "sb--editconfig") == 0)  // uninstall
+    {
+        editor_select();  
     }
     else
     { 
-        char command[MAX_COMMAND_LENGHT] = {0};  // now running native by default
+        char command[MAX_COMMAND_LENGHT] = {0};  // running native by default
         strcpy(command, args[0]);                       
 
         for (int i = 1; args[i] != NULL; i++)
