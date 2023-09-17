@@ -36,15 +36,15 @@ void shutdown_pc(void)
 
 void compile_script(void)
 {
-  // system("(cd $HOME/shellbsrc && sh run.sh)");
-  system("(cd $HOME/projects/shellb/script_area/compiler/ && sh test.sh)");
+  system("(cd $HOME/shellbsrc/shellb/script_area/compiler && sh run.sh)");
+  // system("(cd $HOME/projects/shellb/script_area/compiler/ && sh test.sh)");
   puts("Compiled with success");
 }
 
 void run_script(void)
 {
-  system("(cd $HOME/projects/shellb/script_area/bin/ && ./shellscript)");
-  // system("(cd $HOME/shellbsrc && ./shellscript)"); 
+  // system("(cd $HOME/projects/shellb/script_area/bin/ && ./shellscript)");
+  system("(cd $HOME/shellbsrc/shellb/script_area/bin && ./shellscript)"); 
 }
 
 char* working_dir(void) {
