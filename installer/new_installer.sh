@@ -4,6 +4,14 @@ git clone -b unstablev2 https://github.com/SerjeiMikailov/shellb.git
 
 cd shellb
 
+cd $OLDPWD
+
+mv shellb $HOME
+
+cd $HOME
+
+cd shellb
+
 sh client_compiler.sh
 
 cd build 
