@@ -1,6 +1,3 @@
-#!/bin/zsh
-
-# #!/bin/bash
 
 clang -c ../../src/misc.c -o ../bin/test.o
 

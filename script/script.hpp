@@ -8,6 +8,8 @@ enum TokenType {
     KEYWORD_HI,
     KEYWORD_CLEAR,
     KEYWORD_LS,
+    KEYWORD_CD,
+    KEYWORD_CF,
     END_OF_FILE,
 };
 

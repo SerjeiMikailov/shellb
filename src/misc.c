@@ -36,7 +36,7 @@ void shutdown_pc(void)
 
 void compile_script(void)
 {
-  system("(cd $HOME/shellbsrc && sh run.sh)");
+  system("(cd $HOME/shellbsrc/shellb/script_area/compiler && sh run.sh)");
   // system("(cd $HOME/projects/shellb/script_area/compiler/ && sh test.sh)");
   puts("Compiled with success");
 }
@@ -44,7 +44,7 @@ void compile_script(void)
 void run_script(void)
 {
   // system("(cd $HOME/projects/shellb/script_area/bin/ && ./shellscript)");
-  system("(cd $HOME/shellbsrc && ./shellscript)"); 
+  system("(cd $HOME/shellbsrc/shellb/script_area/bin && ./shellscript)"); 
 }
 
 char* working_dir(void) {
@@ -60,6 +60,6 @@ char* working_dir(void) {
 void shellb(void) {
     printf("\033[1;36m----------------\033[0m\n");
     printf("\033[1;96m-    ShellB    -\033[0m\n");
-    printf("\033[1;96m-  Main V1.13  -\033[0m\n");
+    printf("\033[1;96m-  Beta V1.14  -\033[0m\n");
     printf("\033[1;36m----------------\033[0m\n");
 }

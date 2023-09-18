@@ -199,14 +199,20 @@ void execute_command(char **args)
         puts("https://github.com/SerjeiMikailov/shellb"); 
     } else if(strcmp(args[0], "sb--update") == 0)  // update
     {
-        system("updateshellb.sh");
+        system("sudo client_updater.sh");
     } else if(strcmp(args[0], "sb--uninstall") == 0)  // uninstall
     {
         system("uninstall.sh --uninstall");  
+    } else if(strcmp(args[0], "sb--editconfig") == 0)  // uninstall
+    {
+        editor_select();  
+    } else if(strcmp(args[0], "sb--saveconfig") == 0)  // uninstall
+    {
+        system("(cd $HOME/shellbsrc/shellb && sh savecfg.sh)");
     }
-    else
+    else 
     { 
-        char command[MAX_COMMAND_LENGHT] = {0};  // now running native by default
+        char command[MAX_COMMAND_LENGHT] = {0};  // running native by default
         strcpy(command, args[0]);                       
 
         for (int i = 1; args[i] != NULL; i++)

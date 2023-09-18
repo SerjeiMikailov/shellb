@@ -6,19 +6,19 @@
 |                                |
 |             ShellB             |
 |                                |
-|          Version 1.13          |
+|          Version 1.14          |
 |                                |
 ----------------------------------
 
-Stable build version
-Stable v4
+Unstable build version
+Unstable v4
 
 */
 
 int main(void)
 {
     clear();
-    shellb();
+    watermark_change();
 
     char command[MAX_COMMAND_LENGHT];
     char *args[MAX_ARGS];
