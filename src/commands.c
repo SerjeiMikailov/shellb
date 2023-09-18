@@ -200,7 +200,7 @@ void execute_command(char **args)
         puts("https://github.com/SerjeiMikailov/shellb"); 
     } else if(strcmp(args[0], "sb--update") == 0)  // update
     {
-        system("client_updater.sh");
+        system("sudo client_updater.sh");
     } else if(strcmp(args[0], "sb--uninstall") == 0)  // uninstall
     {
         system("uninstall.sh --uninstall");  
