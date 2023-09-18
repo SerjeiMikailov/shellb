@@ -14,7 +14,7 @@ mkdir shellbsrc
 
 cd shellbsrc
 
-git clone -b unstablev2 https://github.com/SerjeiMikailov/shellb.git
+git clone https://github.com/SerjeiMikailov/shellb.git
 
 cd shellb 
 

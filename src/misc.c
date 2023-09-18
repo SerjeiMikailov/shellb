@@ -60,6 +60,6 @@ char* working_dir(void) {
 void shellb(void) {
     printf("\033[1;36m----------------\033[0m\n");
     printf("\033[1;96m-    ShellB    -\033[0m\n");
-    printf("\033[1;96m-  Beta V1.14  -\033[0m\n");
+    printf("\033[1;96m-  Main V1.15  -\033[0m\n");
     printf("\033[1;36m----------------\033[0m\n");
 }
