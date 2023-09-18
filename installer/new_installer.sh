@@ -16,7 +16,7 @@ sh client_compiler.sh
 
 cd build
 
-sudo cp shellb /usr/local/bin
+sudo mv shellb /usr/local/bin
 sudo chmod +x /usr/local/bin/shellb
 
 cd ..
