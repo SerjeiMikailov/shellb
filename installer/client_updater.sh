@@ -6,7 +6,7 @@ rm -rf shellbsrc
 
 cd /usr/local/bin/
 
-sudo rm -rf shellb
+rm -rf shellb
 
 cd $HOME
 
