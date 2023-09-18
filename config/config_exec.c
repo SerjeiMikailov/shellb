@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "config.h"
+#include "../src/App.h"
 
 void editor_select()
 {
@@ -14,4 +15,14 @@ void editor_select()
     system("nano $HOME/shellbsrc/shellb/config/config.c");  
   }
 
+}
+
+void watermark_change()
+{
+  if(style_watermark_enable == 1)
+  {
+    shellb();
+  } else if(style_watermark_enable == 0)
+  { 
+  }
 }

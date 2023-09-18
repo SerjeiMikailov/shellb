@@ -15,10 +15,18 @@ In the variable "editor":
 - 3 if you using VScode
 
 ---------------------------
-
 */
-
 
 int editor = 1;
 
+/*
+---------------------------
 
+--> Removing the Watermark
+
+To remove the ShellB Watermark, you can put the variable in 0
+
+---------------------------
+*/
+
+int style_watermark_enable = 1;
