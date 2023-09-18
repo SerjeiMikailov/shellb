@@ -11,6 +11,8 @@
 
 #include "generator.h"
 
+#include "../config/config.h"
+
 #define MAX_COMMAND_LENGHT 100
 #define MAX_ARGS 20
 #define MAX_PATH 50000

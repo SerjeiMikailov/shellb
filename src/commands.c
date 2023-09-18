@@ -1,6 +1,5 @@
 #include "App.h"
 #include "generator.h"
-#include "../config/config.h"
 #include <stdio.h>
 
 void execute_command(char **args)

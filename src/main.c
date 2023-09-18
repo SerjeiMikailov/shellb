@@ -18,7 +18,7 @@ Unstable v4
 int main(void)
 {
     clear();
-    shellb();
+    watermark_change();
 
     char command[MAX_COMMAND_LENGHT];
     char *args[MAX_ARGS];
