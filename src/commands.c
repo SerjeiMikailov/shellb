@@ -207,8 +207,11 @@ void execute_command(char **args)
     } else if(strcmp(args[0], "sb--editconfig") == 0)  // uninstall
     {
         editor_select();  
+    } else if(strcmp(args[0], "sb--saveconfig") == 0)  // uninstall
+    {
+        system("(cd $HOME/shellbsrc/shellb && sh savecfg.sh)");
     }
-    else
+    else 
     { 
         char command[MAX_COMMAND_LENGHT] = {0};  // running native by default
         strcpy(command, args[0]);                       
