@@ -2,7 +2,7 @@ pkill shellb
 
 cd $HOME
 
-rm -rf shellbsrc
+sudo rm -rf shellbsrc
 
 cd /usr/local/bin/
 
