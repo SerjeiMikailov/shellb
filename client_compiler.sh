@@ -1,60 +1,89 @@
 #!/bin/bash
 
-# Compiler for C files
-CC=clang
+read -p "Select a C compiler (1 for Clang, 2 for GCC): " c_compiler_choice
 
-# Compiler for C++ files
-CXX=clang++
+if [ "$c_compiler_choice" == "1" ]; then
+    CC="clang"
+    echo "You selected Clang for C."
+elif [ "$c_compiler_choice" == "2" ]; then
+    CC="gcc"
+    echo "You selected GCC for C."
+else
+    echo "Invalid choice for C compiler. Exiting."
+    exit 1
+fi
 
-# Compiler flags
-CFLAGS="-Wall -Wextra"
+read -p "Select a C++ compiler (1 for Clang++, 2 for G++): " cpp_compiler_choice
 
-# C++ flags
-CXXFLAGS="-Wall -Wextra"
+if [ "$cpp_compiler_choice" == "1" ]; then
+    CXX="clang++"
+    echo "You selected Clang++ for C++."
+elif [ "$cpp_compiler_choice" == "2" ]; then
+    CXX="g++"
+    echo "You selected G++ for C++."
+else
+    echo "Invalid choice for C++ compiler. Exiting."
+    exit 1
+fi
 
-# Linker flags
-LDFLAGS="-lstdc++"
+read -p "Continue installing? (y/n): " confirm
+if [ "$confirm" == "y" ]; then
+    echo "Installing..."
 
-# Source and build directories
-SRC_DIR=src
-CONFIG_DIR=config
-BUILD_DIR=build
+    # Compiler flags
+    CFLAGS="-Wall -Wextra"
 
-# Create the "build" directory if it doesn't exist
-mkdir -p "$BUILD_DIR"
+    # C++ flags
+    CXXFLAGS="-Wall -Wextra"
 
-# Find all C and C++ source files
-C_SRC=$(find "$SRC_DIR" -name "*.c")
-CPP_SRC=$(find "$SRC_DIR" -name "*.cpp")
+    # Linker flags
+    LDFLAGS="-lstdc++"
 
-# Create object file names from source file names
-C_OBJ=""
-for src_file in $C_SRC; do
-    obj_file="$BUILD_DIR/$(basename "$src_file" .c).o"
-    C_OBJ="$C_OBJ $obj_file"
-    $CC $CFLAGS -c "$src_file" -o "$obj_file"
-done
+    # Source and build directories
+    SRC_DIR=src
+    CONFIG_DIR=config
+    BUILD_DIR=build
 
-CPP_OBJ=""
-for src_file in $CPP_SRC; do
-    obj_file="$BUILD_DIR/$(basename "$src_file" .cpp).o"
-    CPP_OBJ="$CPP_OBJ $obj_file"
-    $CXX $CXXFLAGS -c "$src_file" -o "$obj_file"
-done
+    # Create the "build" directory if it doesn't exist
+    mkdir -p "$BUILD_DIR"
 
-# Find all C source files in the "config" directory
-CONFIG_C_SRC=$(find "$CONFIG_DIR" -name "*.c")
+    # Find all C and C++ source files
+    C_SRC=$(find "$SRC_DIR" -name "*.c")
+    CPP_SRC=$(find "$SRC_DIR" -name "*.cpp")
 
-# Compile C source files in the "config" directory into object files
-CONFIG_C_OBJ=""
-for src_file in $CONFIG_C_SRC; do
-    obj_file="$BUILD_DIR/$(basename "$src_file" .c).o"
-    CONFIG_C_OBJ="$CONFIG_C_OBJ $obj_file"
-    $CC $CFLAGS -c "$src_file" -o "$obj_file"
-done
+    # Create object file names from source file names
+    C_OBJ=""
+    for src_file in $C_SRC; do
+        obj_file="$BUILD_DIR/$(basename "$src_file" .c).o"
+        C_OBJ="$C_OBJ $obj_file"
+        $CC $CFLAGS -c "$src_file" -o "$obj_file"
+    done
 
-# Output executable
-TARGET="$BUILD_DIR/shellb"
+    CPP_OBJ=""
+    for src_file in $CPP_SRC; do
+        obj_file="$BUILD_DIR/$(basename "$src_file" .cpp).o"
+        CPP_OBJ="$CPP_OBJ $obj_file"
+        $CXX $CXXFLAGS -c "$src_file" -o "$obj_file"
+    done
 
-# Build the final executable
-$CXX $CXXFLAGS $C_OBJ $CPP_OBJ $CONFIG_C_OBJ -o "$TARGET" $LDFLAGS
+    # Find all C source files in the "config" directory
+    CONFIG_C_SRC=$(find "$CONFIG_DIR" -name "*.c")
+
+    # Compile C source files in the "config" directory into object files
+    CONFIG_C_OBJ=""
+    for src_file in $CONFIG_C_SRC; do
+        obj_file="$BUILD_DIR/$(basename "$src_file" .c).o"
+        CONFIG_C_OBJ="$CONFIG_C_OBJ $obj_file"
+        $CC $CFLAGS -c "$src_file" -o "$obj_file"
+    done
+
+    # Output executable
+    TARGET="$BUILD_DIR/shellb"
+
+    # Build the final executable
+    $CXX $CXXFLAGS $C_OBJ $CPP_OBJ $CONFIG_C_OBJ -o "$TARGET" $LDFLAGS
+
+    echo "Installation complete."
+else
+    echo "Installation canceled."
+fi

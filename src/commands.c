@@ -203,12 +203,12 @@ void execute_command(char **args)
     } else if(strcmp(args[0], "sb--uninstall") == 0)  // uninstall
     {
         system("uninstall.sh --uninstall");  
-    } else if(strcmp(args[0], "sb--editconfig") == 0)  // uninstall
+    } else if(strcmp(args[0], "sb--editconfig") == 0)  // editconfig
     {
         editor_select();  
-    } else if(strcmp(args[0], "sb--saveconfig") == 0)  // uninstall
+    } else if(strcmp(args[0], "sb--saveconfig") == 0)  // saveconfig
     {
-        system("(cd $HOME/shellbsrc/shellb && sh savecfg.sh)");
+      compile();  
     }
     else 
     { 

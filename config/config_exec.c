@@ -23,6 +23,18 @@ void watermark_change()
   {
     shellb();
   } else if(style_watermark_enable == 0)
-  { 
+  {
+    int cleitus = 0;
+  }
+}
+
+void compile()
+{
+  if(compiler == 1)
+  {
+    system("(cd $HOME/shellbsrc/shellb && sh savecfg.sh --gcc)");
+  } else if(compiler == 2)
+  {
+    system("(cd $HOME/shellbsrc/shellb && sh savecfg.sh --clang)");
   }
 }
