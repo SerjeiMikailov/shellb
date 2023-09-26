@@ -1,31 +1,30 @@
 
 git clone -b unstablev2 https://github.com/SerjeiMikailov/shellb.git
 
-cd shellb
-cd $OLDPWD
+cd shellb || exit 1
 
-mkdir $HOME/shellbsrc
+if [ ! -d "$HOME/shellbsrc" ]; then
+    mkdir "$HOME/shellbsrc"
+fi
 
-mv shellb $HOME/shellbsrc
+mv shellb "$HOME/shellbsrc"
 
-cd $HOME
-cd shellbsrc
-cd shellb 
+cd "$HOME/shellbsrc/shellb" || exit 1
 
 read -p "Select your compiler: (clang / gcc): " confirm
-if [ "$confirm" == "clang" ]; then
+
+if [ "$confirm" = "clang" ]; then
     sh clang.sh
-elif [ "$confirm" == "gcc" ]; then
+elif [ "$confirm" = "gcc" ]; then
     sh gcc.sh
 fi
 
-cd build
+cd "$HOME/shellbsrc/shellb/build" || exit 1
 
 sudo mv shellb /usr/local/bin
 sudo chmod +x /usr/local/bin/shellb
 
-cd ..
-cd installer
+cd "$HOME/shellbsrc/shellb/installer" || exit 1
 
 sudo cp client_updater.sh /usr/local/bin
 sudo chmod +x /usr/local/bin/client_updater.sh
