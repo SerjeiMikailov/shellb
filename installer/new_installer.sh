@@ -12,7 +12,12 @@ cd $HOME
 cd shellbsrc
 cd shellb 
 
-sh client_compiler.sh
+read -p "Select your compiler: (clang / gcc): " confirm
+if [ "$confirm" == "clang" ]; then
+    sh clang.sh
+elif [ "$confirm" == "gcc" ]; then
+    sh gcc.sh
+fi
 
 cd build
 
